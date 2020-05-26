@@ -7,20 +7,16 @@
   },
   "scripts": {
     "build": "skpm-build",
-    "watch": "skpm-build --watch",
-    "render": "skpm-build --watch --run",
-    "render:once": "skpm-build --run",
+    "render": "node createPalette.js && skpm-build --run",
     "postinstall": "npm run build && skpm-link"
   },
-  "author": "Jon Gold <jon.gold@airbnb.com>",
+  "author": "Rob Hough",
   "license": "MIT",
   "dependencies": {
-    "chroma-js": "^1.2.2",
     "react": "^16.3.2",
     "react-primitives": "^0.8.1",
     "react-sketchapp": "^3.0.0",
-    "react-test-renderer": "^16.3.2",
-    "styled-components": "^5.1.1"
+    "react-test-renderer": "^16.3.2"
   },
   "devDependencies": {
     "@skpm/builder": "^0.4.0"

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, makeSymbol } from 'react-sketchapp';
-import tokens from '../tokens';
+import designSystem from '../designSystem';
 
 export const PrimaryButton = () => (
   <View name="Primary Button" style={
@@ -9,13 +9,13 @@ export const PrimaryButton = () => (
       paddingVertical: 16,
       borderRadius: 8,
       borderWidth: 1,
-      borderColor: tokens.colours.Primary,
-      backgroundColor: tokens.colours.Primary,
+      borderColor: designSystem.colours.Primary,
+      backgroundColor: designSystem.colours.Primary,
       justifyContent: 'center',
       alignItems: 'center'
     }
   }>
-    <Text style={{ ...tokens.typeStyles['Link 1'], color: tokens.colours.Base, lineHeight: 18, paddingHorizontal: 16, textAlign: 'center' }}>Button</Text>
+    <Text style={{ ...designSystem.typeStyles['Link 1'], color: designSystem.colours.Base, lineHeight: 18, paddingHorizontal: 16, textAlign: 'center' }}>Button</Text>
   </View>
 );
 
@@ -26,13 +26,13 @@ export const SecondaryButton = () => (
       paddingVertical: 16,
       borderRadius: 8,
       borderWidth: 1,
-      borderColor: tokens.colours.Muted,
-      backgroundColor: tokens.colours.Muted,
+      borderColor: designSystem.colours.Muted,
+      backgroundColor: designSystem.colours.Muted,
       justifyContent: 'center',
       alignItems: 'center'
     }
   }>
-    <Text style={{ ...tokens.typeStyles['Link 1'], color: tokens.colours.Primary, lineHeight: 18, paddingHorizontal: 16, textAlign: 'center' }}>Button</Text>
+    <Text style={{ ...designSystem.typeStyles['Link 1'], color: designSystem.colours.Primary, lineHeight: 18, paddingHorizontal: 16, textAlign: 'center' }}>Button</Text>
   </View>
 );
 
@@ -42,14 +42,14 @@ export const OutlineButton = () => (
       maxWidth: 200,
       paddingVertical: 16,
       borderRadius: 8,
-      backgroundColor: tokens.colours.Base,
+      backgroundColor: designSystem.colours.Base,
       borderWidth: 1,
-      borderColor: tokens.colours.Primary,
+      borderColor: designSystem.colours.Primary,
       justifyContent: 'center',
       alignItems: 'center'
     }
   }>
-    <Text style={{ ...tokens.typeStyles['Link 1'], color: tokens.colours.Primary, lineHeight: 18, paddingHorizontal: 16, textAlign: 'center' }}>Button</Text>
+    <Text style={{ ...designSystem.typeStyles['Link 1'], color: designSystem.colours.Primary, lineHeight: 18, paddingHorizontal: 16, textAlign: 'center' }}>Button</Text>
   </View>
 );
 

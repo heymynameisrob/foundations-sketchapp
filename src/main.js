@@ -5,19 +5,19 @@ import { Section } from './components/Layout';
 import { TypeSpecimen } from './components/Type';
 import { Palette } from './components/Colours';
 
-import tokens from './tokens';
+import designSystem from './designSystem';
 import { Buttons } from './components/Controls';
 
-const Document = ({ tokens }) => (
+const Document = ({ designSystem }) => (
   <Page name="🎨 Styles">
     <Artboard style={{ width: 1440, height: 2880 }} name="Styles">
 
       <Section title="Colours">
-        <Palette colors={tokens.colours} />
+        <Palette colors={designSystem.colours} />
       </Section>
 
       <Section title="Type Styles">
-        {Object.keys(tokens.typeStyles).map((name) => (
+        {Object.keys(designSystem.typeStyles).map((name) => (
           <TypeSpecimen key={name} name={name} style={TextStyles.get(name)} />
         ))}
       </Section>
@@ -32,9 +32,9 @@ const Document = ({ tokens }) => (
 
 export default () => {
 
-  TextStyles.create(tokens.typeStyles, {
+  TextStyles.create(designSystem.typeStyles, {
     clearExistingStyles: true,
   });
 
-  render(<Document tokens={tokens} />, context.document.currentPage());
+  render(<Document designSystem={designSystem} />, context.document.currentPage());
 }
