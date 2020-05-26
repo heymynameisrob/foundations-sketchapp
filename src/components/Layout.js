@@ -1,24 +1,20 @@
 import React from 'react';
 import { Text, View } from 'react-sketchapp';
 
-export const Badge = ({ children, filled = false }) => (
-  <View
-    style={{
-      borderRadius: 4,
-      backgroundColor: filled ? '#333' : 'transparent',
-      paddingLeft: 8,
-      paddingRight: 8,
-      borderWidth: 1,
-      borderColor: '#333',
-    }}
-  >
-    <Text
-      style={{
-        color: filled ? '#fff' : '#333',
-      }}
-    >
-      {children}
-    </Text>
+export const Surfaces = ({ shadows }) => (
+  <View name="Surfaces" style={{ flexDirection: 'row', justifyContent: 'space-between', width: 400 }}>
+    <View style={{ width: 100 }}>
+      <View style={{ ...shadows.flat, width: 100, height: 100, marginBottom: 8, borderRadius: 4 }} name="Flat" />
+      <Label>Flat</Label>
+    </View>
+    <View style={{ width: 100 }}>
+      <View style={{ ...shadows.raised, width: 100, height: 100, marginBottom: 8, borderRadius: 4 }} name="Raised" />
+      <Label>Raised</Label>
+    </View>
+    <View style={{ width: 100 }}>
+      <View style={{ ...shadows.float, width: 100, height: 100, marginBottom: 8, borderRadius: 4 }} name="Float" />
+      <Label>Floating</Label>
+    </View>
   </View>
 );
 

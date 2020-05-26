@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { render, TextStyles, Page, Artboard } from 'react-sketchapp';
 
-import { Section } from './components/Layout';
+import { Section, Surfaces } from './components/Layout';
 import { TypeSpecimen } from './components/Type';
 import { Palette } from './components/Colours';
 
-import designSystem from './designSystem';
-import { Buttons } from './components/Controls';
+import designSystem, { Shadows } from './designSystem';
+import { Buttons, Inputs } from './components/Controls';
 
 const Document = ({ designSystem }) => (
   <Page name="🎨 Styles">
@@ -14,6 +14,10 @@ const Document = ({ designSystem }) => (
 
       <Section title="Colours">
         <Palette colors={designSystem.colours} />
+      </Section>
+
+      <Section title="Surfaces">
+        <Surfaces shadows={Shadows} />
       </Section>
 
       <Section title="Type Styles">
@@ -24,6 +28,7 @@ const Document = ({ designSystem }) => (
 
       <Section title="Controls">
         <Buttons />
+        <Inputs />
       </Section>
 
     </Artboard>

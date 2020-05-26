@@ -1,7 +1,7 @@
 const fs = require('fs');
 const colours = require('./tokens.json').colours;
 
-let data = {
+let schema = {
   "compatibleVersion": "2.0",
   "pluginVersion": "2.22",
   "colors": [],
@@ -17,10 +17,10 @@ const hexToRgb = (hex) => {
 }
 
 Object.entries(colours).forEach((colour, key) => {
-  data.colors.push({ "name": colour[0], "red": hexToRgb(colour[1])[0], "green": hexToRgb(colour[1])[1], "blue": hexToRgb(colour[1])[2], "alpha": 1 });
+  schema.colors.push({ "name": colour[0], "red": hexToRgb(colour[1])[0], "green": hexToRgb(colour[1])[1], "blue": hexToRgb(colour[1])[2], "alpha": 1 });
 })
 
-console.log(data);
+const data = JSON.stringify(schema, 2, null);
 
 fs.writeFile('palette.sketchpalette', data, (err) => {
   if (err) throw err;
